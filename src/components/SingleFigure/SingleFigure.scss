@@ -1,0 +1,45 @@
+@import "../../assets/stylesheets/variables.scss";
+@import "../../assets/stylesheets/mixins.scss";
+
+.SingleFigure {
+  width: 33.33%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px 15px;
+  border: 2px solid $gray;
+  background: $white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: border-color 0.5s;
+
+  @include MobileTablet {
+    width: 100%;
+  }
+
+  &:hover,
+  &.selected {
+    border-color: $black;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+
+  h3 {
+    width: 100%;
+    text-align: center;
+  }
+
+  a {
+    color: $red;
+    text-decoration: none;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

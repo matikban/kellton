@@ -1,0 +1,27 @@
+@import "../../assets/stylesheets/variables.scss";
+
+.button {
+  font-weight: 600;
+  color: $white;
+  background: $black;
+  text-transform: uppercase;
+  line-height: initial;
+  font-size: 15px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: 1px solid $black;
+  transition: all 0.3s;
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 24px -4px rgba(0, 0, 0, 0.85);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

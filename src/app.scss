@@ -1,0 +1,151 @@
+@import "assets/stylesheets/variables.scss";
+@import "assets/stylesheets/mixins.scss";
+#root {
+  width: 100%;
+}
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url("./assets/images/bg.svg");
+  background-size: cover;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $black;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 30px 15px;
+  text-align: center;
+
+  @include MobileTablet {
+    width: calc(100% - 30px);
+    margin: 0 15px;
+  }
+
+  @include DesktopLG {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+.Step1 {
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  button {
+    animation: fadeInUp 1s forwards;
+  }
+}
+
+.Step3 {
+  display: flex;
+  gap: 60px;
+
+  &__form {
+    width: 55%;
+    margin-top: 15px;
+  }
+
+  &__summary {
+    width: 45%;
+  }
+
+  @include MobileTablet {
+    flex-wrap: wrap;
+    gap: 0px;
+
+    &__form {
+      width: 100%;
+      order: 2;
+    }
+
+    &__summary {
+      width: 100%;
+      order: 1;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    margin-top: 60px;
+    opacity: 0;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: $white $white transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent $red $red;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: $white $white transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

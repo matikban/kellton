@@ -1,0 +1,101 @@
+/** BREAKPOINTS */
+$grid-breakpoints: (
+  xs: 0,
+  xs-max: 575px,
+  sm: 576px,
+  sm-max: 767px,
+  md: 768px,
+  md-max: 991px,
+  lg: 992px,
+  lg-max: 1199px,
+  xl-min: 1200px,
+  xl: 1360px,
+  xl-max: 1439px,
+  xxl-min: 1440px,
+  xxl-max: 1720px,
+) !default;
+
+/** BREAKPOINTS MIXINS */
+/** WIDTH: > xs and < xs-max */
+@mixin MobileXS() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: xs)) and (max-width: map-get($map: $grid-breakpoints, $key: xs-max)) {
+    @content;
+  }
+}
+
+/** WIDTH: > sm and < sm-max */
+@mixin MobileSM() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: sm)) and (max-width: map-get($map: $grid-breakpoints, $key: sm-max)) {
+    @content;
+  }
+}
+
+/** WIDTH: > xs and < sm-max */
+@mixin Mobile() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: xs)) and (max-width: map-get($map: $grid-breakpoints, $key: sm-max)) {
+    @content;
+  }
+}
+
+/** WIDTH: > xs and < md-max */
+@mixin MobileTablet() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: xs)) and (max-width: map-get($map: $grid-breakpoints, $key: md-max)) {
+    @content;
+  }
+}
+
+/** WIDTH: > md and < md-max */
+@mixin Tablet() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: md)) and (max-width: map-get($map: $grid-breakpoints, $key: md-max)) {
+    @content;
+  }
+}
+
+/** WIDTH: > md and < lg-max */
+@mixin TabletDesktopLG() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: md)) and (max-width: map-get($map: $grid-breakpoints, $key: lg-max)) {
+    @content;
+  }
+}
+
+/** WIDTH: > md */
+@mixin TabletDesktop() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: md)) {
+    @content;
+  }
+}
+
+/** WIDTH: > lg and < lg-max */
+@mixin DesktopLG() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: lg)) and (max-width: map-get($map: $grid-breakpoints, $key: lg-max)) {
+    @content;
+  }
+}
+
+/** WIDTH: > xl-min */
+@mixin DesktopXLMIN() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: xl-min)) {
+    @content;
+  }
+}
+
+/** WIDTH: > xl */
+@mixin DesktopXL() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: xl)) {
+    @content;
+  }
+}
+
+/** WIDTH: > lg */
+@mixin Desktop() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: lg)) {
+    @content;
+  }
+}
+
+/** WIDTH: > xxl-max  */
+@mixin DesktopLarge() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: xxl-max)) {
+    @content;
+  }
+}
